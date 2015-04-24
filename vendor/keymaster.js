@@ -221,6 +221,39 @@
     return k;
   }
 
+  function unbindKey(key, scope) {
+  var multipleKeys, keys,
+    mods = [],
+    i, j, obj;
+
+  multipleKeys = getKeys(key);
+
+  for (j = 0; j < multipleKeys.length; j++) {
+    keys = multipleKeys[j].split('+');
+
+    if (keys.length > 1) {
+      mods = getMods(keys);
+    }
+
+    key = keys[keys.length - 1];
+    key = code(key);
+
+    if (scope === undefined) {
+      scope = getScope();
+    }
+    if (!_handlers[key]) {
+      return;
+    }
+    for (i = 0; i < _handlers[key].length; i++) {
+      obj = _handlers[key][i];
+      // only clear handlers if correct scope and mods match
+      if (obj.scope === scope && compareArray(obj.mods, mods)) {
+        _handlers[key][i] = {};
+      }
+    }
+  }
+}
+
   // set window.key and window.key.set/get/deleteScope, and the default filter
   global.key = assignKey;
   global.key.setScope = setScope;
@@ -230,6 +263,8 @@
   global.key.isPressed = isPressed;
   global.key.getPressedKeyCodes = getPressedKeyCodes;
   global.key.noConflict = noConflict;
+  global.key.addEvent = addEvent;
+  global.key.unbindKey = unbindKey;
 
   if(typeof module !== 'undefined') module.exports = key;
 

@@ -1,0 +1,11 @@
+game.step()
+  game.moveObjects()
+    calls object.move on allObjects()
+  game.checkCollisions()
+    if obj1.isCollidedWith(obj2)
+      obj1.collideWith(obj2)
+      Asteroid.prototype.collideWith
+      Bullet.prototype.collideWith
+        obj.remove()
+          game.remove(obj)
+game.draw();
