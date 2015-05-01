@@ -4,7 +4,15 @@
   </head>
 
   <body>
-    <canvas></canvas>
+    <canvas id='game'></canvas>
+    <p>
+      <div><b style="font-size: 16px;">Controls</b></div>
+      <div><b style="font-size: 14px;">Left:  'a'  or  &#8592;</b></div>
+      <div><b style="font-size: 14px;">Right:  'd'  or  &#8594;</b></div>
+      <div><b style="font-size: 14px;">Stop:  's'  or  &#8595;</b></div>
+      <div><b style="font-size: 14px;">Shoot:  space  or  'w' or &#8593;</b></div>
+      <b style="font-size: 16px;"><b>
+    </p>
 
     <script type="application/javascript" src="vendor/keymaster.js"></script>
 
@@ -20,6 +28,7 @@
 
     <script type="application/javascript">
       (function () {
+
         var canvasEl = document.getElementsByTagName("canvas")[0];
         canvasEl.width = Asteroids.Game.DIM_X;
         canvasEl.height = Asteroids.Game.DIM_Y;
