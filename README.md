@@ -1,5 +1,5 @@
 # Asteroids
-My versin of asteroids! Built on javascript and HTML5 Canvas
+My version of asteroids! Built on javascript and HTML5 Canvas
 
 ## Controls
 Left:  'a'  or  &#8592;
