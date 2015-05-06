@@ -1,6 +1,8 @@
 # Asteroids
 My version of asteroids! Built on javascript and HTML5 Canvas
 
+Shoot the asteroids before they shoot you!
+
 ## Controls
 Left:  'a'  or  &#8592;
 
